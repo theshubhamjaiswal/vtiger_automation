@@ -1,0 +1,17 @@
+<suite parallel="tests" name="suite">
+	<test parallel="tests" name="testrunner1">
+		<classes>
+			<class name="types_of_execution.ContactsTest" />
+		</classes>
+	</test>
+	<test parallel="tests" name="testrunner2">
+		<classes>
+			<class name="types_of_execution.OrgTest" />
+		</classes>
+	</test>
+	<test parallel="tests" name="testrunner3">
+		<classes>
+			<class name="types_of_execution.LeadsTest" />
+		</classes>
+	</test>
+</suite>

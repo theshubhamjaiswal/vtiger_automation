@@ -1,0 +1,16 @@
+<suite name="suits">
+	<test name="tests">
+		<classes>
+			<class name="types_of_execution.OrgTest">
+				<methods>
+					<include name="createOrgTest"/>
+				</methods>
+			</class>
+			<class name="types_of_execution.ContactsTest" />
+				<methods>
+					<exclude name="deleteContactsTest"/>
+				</methods>
+			<class name="types_of_execution.LeadsTest" />
+		</classes>
+	</test>
+</suite>
