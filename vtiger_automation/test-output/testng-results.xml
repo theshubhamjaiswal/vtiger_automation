@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-09T14:59:10 IST" name="Default suite" finished-at="2026-06-09T14:59:21 IST" duration-ms="10717">
+  <suite started-at="2026-06-09T20:13:07 IST" name="Suite" finished-at="2026-06-09T20:13:12 IST" duration-ms="5378">
     <groups>
     </groups>
-    <test started-at="2026-06-09T14:59:10 IST" name="Default test" finished-at="2026-06-09T14:59:21 IST" duration-ms="10717">
-      <class name="advance_report.FacebookReport">
-        <test-method signature="login()[pri:0, instance:advance_report.FacebookReport@30c15d8b]" started-at="2026-06-09T14:59:11 IST" name="login" finished-at="2026-06-09T14:59:21 IST" duration-ms="10635" status="PASS">
+    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner1" finished-at="2026-06-09T20:13:12 IST" duration-ms="4994">
+      <class name="cbt_xml_executions.OrgTest">
+        <test-method signature="createOrg(java.lang.String)[pri:0, instance:cbt_xml_executions.OrgTest@77888435]" started-at="2026-06-09T20:13:07 IST" name="createOrg" finished-at="2026-06-09T20:13:12 IST" duration-ms="4928" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- advance_report.FacebookReport -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- createOrg -->
+      </class> <!-- cbt_xml_executions.OrgTest -->
+    </test> <!-- TestRunner1 -->
+    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner3" finished-at="2026-06-09T20:13:12 IST" duration-ms="5120">
+      <class name="cbt_xml_executions.LeadTest">
+        <test-method signature="createLeads(java.lang.String)[pri:0, instance:cbt_xml_executions.LeadTest@367ffa75]" started-at="2026-06-09T20:13:07 IST" name="createLeads" finished-at="2026-06-09T20:13:12 IST" duration-ms="5060" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLeads -->
+      </class> <!-- cbt_xml_executions.LeadTest -->
+    </test> <!-- TestRunner3 -->
+    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner2" finished-at="2026-06-09T20:13:12 IST" duration-ms="5378">
+      <class name="cbt_xml_executions.ContactTest">
+        <test-method signature="createContactTest(java.lang.String)[pri:0, instance:cbt_xml_executions.ContactTest@302552ec]" started-at="2026-06-09T20:13:07 IST" name="createContactTest" finished-at="2026-06-09T20:13:12 IST" duration-ms="5319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactTest -->
+      </class> <!-- cbt_xml_executions.ContactTest -->
+    </test> <!-- TestRunner2 -->
+  </suite> <!-- Suite -->
 </testng-results>

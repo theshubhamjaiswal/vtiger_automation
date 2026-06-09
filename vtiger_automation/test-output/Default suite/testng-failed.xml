@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="learning_data_provider.SauceDemoTest">
+      <class name="cbt_xml_executions.OrgTest">
         <methods>
-          <include name="run" invocation-numbers="1"/>
+          <include name="createOrg"/>
         </methods>
-      </class> <!-- learning_data_provider.SauceDemoTest -->
+      </class> <!-- cbt_xml_executions.OrgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

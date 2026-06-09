@@ -1,3 +1,23 @@
-<suite>
 
-</suite>
+<suite parallel="tests" name="Suite">
+	<test  parallel="tests" name="TestRunner1">
+		<parameter name="bro" value="chrome" />
+		<classes>
+			<class name="cbt_xml_executions.OrgTest" />
+		</classes>
+	</test>
+	
+	<test  parallel="tests" name="TestRunner2">
+		<parameter name="bro" value="edge" />
+		<classes>
+			<class name="cbt_xml_executions.ContactTest" />
+		</classes>
+	</test>
+	
+	<test  parallel="tests" name="TestRunner3">
+		<parameter name="bro" value="edge" />
+		<classes>
+			<class name="cbt_xml_executions.LeadTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
