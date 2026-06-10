@@ -1,54 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-09T20:13:07 IST" name="Suite" finished-at="2026-06-09T20:13:12 IST" duration-ms="5378">
+  <suite started-at="2026-06-10T19:22:45 IST" name="Default suite" finished-at="2026-06-10T19:23:31 IST" duration-ms="45140">
     <groups>
     </groups>
-    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner1" finished-at="2026-06-09T20:13:12 IST" duration-ms="4994">
-      <class name="cbt_xml_executions.OrgTest">
-        <test-method signature="createOrg(java.lang.String)[pri:0, instance:cbt_xml_executions.OrgTest@77888435]" started-at="2026-06-09T20:13:07 IST" name="createOrg" finished-at="2026-06-09T20:13:12 IST" duration-ms="4928" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2026-06-10T19:22:45 IST" name="Default test" finished-at="2026-06-10T19:23:31 IST" duration-ms="45140">
+      <class name="vtiger.contact.CreateContactTest">
+        <test-method is-config="true" signature="reportconfig()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:22:45 IST" name="reportconfig" finished-at="2026-06-10T19:22:45 IST" duration-ms="407" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createOrg -->
-      </class> <!-- cbt_xml_executions.OrgTest -->
-    </test> <!-- TestRunner1 -->
-    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner3" finished-at="2026-06-09T20:13:12 IST" duration-ms="5120">
-      <class name="cbt_xml_executions.LeadTest">
-        <test-method signature="createLeads(java.lang.String)[pri:0, instance:cbt_xml_executions.LeadTest@367ffa75]" started-at="2026-06-09T20:13:07 IST" name="createLeads" finished-at="2026-06-09T20:13:12 IST" duration-ms="5060" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- reportconfig -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:22:45 IST" name="setUp" finished-at="2026-06-10T19:22:48 IST" duration-ms="2640" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createLeads -->
-      </class> <!-- cbt_xml_executions.LeadTest -->
-    </test> <!-- TestRunner3 -->
-    <test started-at="2026-06-09T20:13:07 IST" name="TestRunner2" finished-at="2026-06-09T20:13:12 IST" duration-ms="5378">
-      <class name="cbt_xml_executions.ContactTest">
-        <test-method signature="createContactTest(java.lang.String)[pri:0, instance:cbt_xml_executions.ContactTest@302552ec]" started-at="2026-06-09T20:13:07 IST" name="createContactTest" finished-at="2026-06-09T20:13:12 IST" duration-ms="5319" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="login()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:22:48 IST" name="login" finished-at="2026-06-10T19:22:57 IST" duration-ms="8803" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createContactTest -->
-      </class> <!-- cbt_xml_executions.ContactTest -->
-    </test> <!-- TestRunner2 -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- login -->
+        <test-method signature="createTest()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:22:57 IST" name="createTest" finished-at="2026-06-10T19:23:27 IST" duration-ms="30087" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:23:27 IST" name="logout" finished-at="2026-06-10T19:23:30 IST" duration-ms="2986" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:23:30 IST" name="tearDown" finished-at="2026-06-10T19:23:31 IST" duration-ms="511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="reportBackup()[pri:0, instance:vtiger.contact.CreateContactTest@3c9754d8]" started-at="2026-06-10T19:23:31 IST" name="reportBackup" finished-at="2026-06-10T19:23:31 IST" duration-ms="564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportBackup -->
+      </class> <!-- vtiger.contact.CreateContactTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

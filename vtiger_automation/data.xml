@@ -1,0 +1,12 @@
+<suite name="s">
+	<test name="t">
+	<parameter name="un" value="admin"/>
+	<parameter name="pwd" value="admin123"/>
+	<parameter name="un2" value="radha"/>
+	<parameter name="pwd2" value="radha1498"/>
+		<classes>
+			<class name="types_of_execution.GetDataFromXmlFile"/>
+			<class name="ddt_extra.GetDataFromXmlFile"/>
+		</classes>
+	</test>
+</suite>

@@ -25,7 +25,7 @@ public class FileUtility {
 		return value;
 	}
 	public String getDataFromExcelFile(String sheetName,int rowIndex,int cellIndex) throws EncryptedDocumentException, FileNotFoundException, IOException {
-		Workbook wb=WorkbookFactory.create(new FileInputStream("./src/test/resources/commondata.json"));
+		Workbook wb=WorkbookFactory.create(new FileInputStream("./src/test/resources/testscriptdataorg.xlsx"));
 		Sheet sh= wb.getSheet(sheetName);
 		Row rw=sh.getRow(rowIndex);
 		Cell cl=rw.getCell(cellIndex);

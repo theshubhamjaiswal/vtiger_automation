@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cbt_xml_executions.OrgTest">
+      <class name="ddt_extra.GetDataFromXmlFile">
         <methods>
-          <include name="createOrg"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- cbt_xml_executions.OrgTest -->
+      </class> <!-- ddt_extra.GetDataFromXmlFile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

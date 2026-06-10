@@ -10,40 +10,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import ObjectRepository.HomePage;
 import ObjectRepository.LoginPage;
 import ObjectRepository.OppoPage;
+import baseutility.BaseClass;
 import generic_utility.FileUtility;
 import generic_utility.WebdriverUtility;
 
-public class CreateOppoTestOpti {
+public class CreateOppoTestOpti extends BaseClass{
 	@Test
-	public static void main(String[] args)
-			throws InterruptedException, FileNotFoundException, IOException, ParseException {
-
-		// ==============================
-		// Browser Setup
-		// ==============================
-		WebDriver driver = null;
-
-		FileUtility futil = new FileUtility();
-		String BROWSER = futil.getDataFromJsonFile("bro");
-		String URL = futil.getDataFromJsonFile("url");
-
-		if (BROWSER.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
-		}
-
-		WebdriverUtility Wutil = new WebdriverUtility(driver);
-		Wutil.maximizeWindow();
-		Wutil.implicitWait();
-
-		driver.get(URL);
-
-		LoginPage lp = new LoginPage(driver);
-		lp.login();
-		System.out.println("Login successful");
-
+	public void runOppoTest() throws FileNotFoundException, IOException, ParseException {
+		ExtentTest test=report.createTest("runOptiTest");
 		// ==============================
 		// Navigate to opportunity Module
 		// ==============================
@@ -73,16 +53,10 @@ public class CreateOppoTestOpti {
 		String verifiedoppname=opp.getVerifyOppName().getText();
 		if(initialoppname.equals(verifiedoppname)) {
 			System.out.println("verified");
-		}else {
-			System.out.println("not verified");
+			test.log(Status.PASS, "contact is varified");
+		} else {
+			System.out.println("verification is failed");
+			test.log(Status.FAIL, "contact is varified");
 		}
-		WebElement profileIcon =hp.getProfileicon();
-		Wutil.hover(profileIcon);
-		hp.getSignoutLink().click();
-		System.out.println("Logout successful");
-
-		Thread.sleep(3000);
-		System.out.println("Browser closed successfully");
-		driver.quit();
 	}
 }

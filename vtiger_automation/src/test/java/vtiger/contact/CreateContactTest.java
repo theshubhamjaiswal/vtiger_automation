@@ -20,7 +20,6 @@ package vtiger.contact;
  * 7. Close Browser
  */
 
-import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -29,31 +28,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
-public class CreateContactTest {
-	public static void main(String[] args) throws InterruptedException {
-		
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+import baseutility.BaseClassDummy;
+
+public class CreateContactTest extends BaseClassDummy{
 	
-				// ==============================
-				// Browser Setup
-				// ==============================
-				WebDriver driver = new ChromeDriver();
-
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-				// ==============================
-				// Launch Application
-				// ==============================
-				driver.get("http://localhost:8888/");
-
-				// ==============================
-				// Login to CRM Application
-				// ==============================
-				driver.findElement(By.name("user_name")).sendKeys("admin");
-				driver.findElement(By.name("user_password")).sendKeys("manager");
-				driver.findElement(By.id("submitButton")).click();
-				System.out.println("Login successful");
+	@Test	
+	public void createTest() {
+				ExtentTest test=report.createTest("createTest");
 				// ==============================
 				// Navigate to contact Module
 				// ==============================
@@ -88,24 +74,13 @@ public class CreateContactTest {
 				
 				String verifiedFirstname=driver.findElement(By.id("dtlview_First Name")).getText();
 				String verifiedLastname=driver.findElement(By.id("dtlview_Last Name")).getText();
-				if(firstName.equals(verifiedFirstname)||lastName.equals(verifiedLastname)) 
+				if(firstName.equals(verifiedFirstname)||lastName.equals(verifiedLastname)) {
 					System.out.println("contact is varified");
-		//	driver.findElement(By.className("crmbutton small save")).click()
-					// ==============================
-					// Logout from Application
-					// ==============================
-					WebElement profileIcon = driver.findElement(
-							By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-					Actions actions = new Actions(driver);
-					actions.moveToElement(profileIcon).perform();
-					driver.findElement(By.linkText("Sign Out")).click();
-					System.out.println("Logout successful");
-					// ==============================
-					// Close Browser
-					// ==============================
-					Thread.sleep(3000);
-
-					driver.quit();
+					test.log(Status.PASS,"contact is varified");
+				}else {
+					System.out.println("contact is not varified");
+					test.log(Status.FAIL, "contact is not varified");
+				}
 
 				
 				

@@ -9,10 +9,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import ObjectRepository.ContactPage;
 import ObjectRepository.HomePage;
 import ObjectRepository.LoginPage;
+import baseutility.BaseClass;
 import generic_utility.FileUtility;
 import generic_utility.WebdriverUtility;
 
@@ -29,36 +34,20 @@ import generic_utility.WebdriverUtility;
  * Organizations Module 4. Create New Organization 5. Validate Organization
  * Creation 6. Logout from Application 7. Close Browser
  */
-public class CreateOptimiseContactTest {
+public class CreateOptimiseContactTest extends BaseClass {
 	
-	public static void main(String[] args) throws InterruptedException, FileNotFoundException, IOException, ParseException {
-
+	//public static void main(String[] args) throws InterruptedException, FileNotFoundException, IOException, ParseException {
+@Test
+public void runOptiTest() throws FileNotFoundException, IOException, ParseException {
+	ExtentTest test=report.createTest("runOptiTest");
 		// ==============================
 		// Browser Setup
 		// ==============================
-		WebDriver driver = null;
 		
-		FileUtility futil= new FileUtility();
-		String BROWSER=futil.getDataFromJsonFile("bro");
-		String URL=futil.getDataFromJsonFile("url");
-		
-		if(BROWSER.equalsIgnoreCase("chrome")) {
-			driver=new ChromeDriver();
-		}
-
-		WebdriverUtility Wutil= new WebdriverUtility(driver);
-		Wutil.maximizeWindow();
-		Wutil.implicitWait();
-
-		driver.get(URL);
-
-		LoginPage lp=new LoginPage(driver);
-		lp.login();
-		System.out.println("Login successful");
-
 		// ==============================
 		// Navigate to contact Module
 		// ==============================
+		WebdriverUtility Wutil= new WebdriverUtility(driver);
 		HomePage hp=new HomePage(driver);
 		hp.getContactlink().click();
 		ContactPage cp=new ContactPage(driver);
@@ -93,20 +82,15 @@ public class CreateOptimiseContactTest {
 		String verifiedLastname = cp.getVerifyLastName().getText();
 		Assert.assertEquals(firstName,verifiedFirstname);
 		Assert.assertEquals(lastName,verifiedLastname);
-		//if (firstName.equals(verifiedFirstname) && lastName.equals(verifiedLastname)) {
-	//		System.out.println("contact is varified");	
-		//} else {
-	//		System.out.println("verification is failed");
-		//}
+		if (firstName.equals(verifiedFirstname) && lastName.equals(verifiedLastname)) {
+			System.out.println("contact is varified");	
+			test.log(Status.PASS, "contact is varified");
+		} else {
+			System.out.println("verification is failed");
+			test.log(Status.FAIL, "contact is varified");
+		}
 		
 		
-		WebElement profileIcon =hp.getProfileicon();
-		Wutil.hover(profileIcon);
-		hp.getSignoutLink().click();
-		System.out.println("Logout successful");
-
-		Thread.sleep(3000);
-		System.out.println("Browser closed successfully");
-		driver.quit();
+	
 	}
 }

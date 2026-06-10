@@ -20,7 +20,7 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.44.0</version>
-			<scope>compile</scope>
+			
 		</dependency>
 
 
