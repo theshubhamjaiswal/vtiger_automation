@@ -5,25 +5,18 @@ import java.io.IOException;
 import java.util.Set;
 
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-
 import ObjectRepository.HomePage;
-import ObjectRepository.LoginPage;
 import ObjectRepository.OppoPage;
 import baseutility.BaseClass;
-import generic_utility.FileUtility;
-import generic_utility.WebdriverUtility;
-
+@Listeners(listeners_utility.List_Imp.class)
 public class CreateOppoTestOpti extends BaseClass{
 	@Test
 	public void runOppoTest() throws FileNotFoundException, IOException, ParseException {
-		ExtentTest test=report.createTest("runOptiTest");
+		//ExtentTest test=report.createTest("runOptiTest");
 		// ==============================
 		// Navigate to opportunity Module
 		// ==============================
@@ -51,12 +44,17 @@ public class CreateOppoTestOpti extends BaseClass{
 		
 		opp.getSaveBtn().click();
 		String verifiedoppname=opp.getVerifyOppName().getText();
-		if(initialoppname.equals(verifiedoppname)) {
-			System.out.println("verified");
-			test.log(Status.PASS, "contact is varified");
-		} else {
-			System.out.println("verification is failed");
-			test.log(Status.FAIL, "contact is varified");
-		}
+		boolean status= (initialoppname.equals(verifiedoppname));
+		Assert.assertTrue(status);
+		
+		
+		
+//		if(initialoppname.equals(verifiedoppname)) {
+//			System.out.println("verified");
+//			test.log(Status.PASS, "contact is varified");
+//		} else {
+//			System.out.println("verification is failed");
+//			test.log(Status.FAIL, "contact is varified");
+//		}
 	}
 }

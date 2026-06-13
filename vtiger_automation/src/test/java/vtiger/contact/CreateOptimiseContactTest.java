@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -34,12 +35,13 @@ import generic_utility.WebdriverUtility;
  * Organizations Module 4. Create New Organization 5. Validate Organization
  * Creation 6. Logout from Application 7. Close Browser
  */
+@Listeners(listeners_utility.List_Imp.class)
 public class CreateOptimiseContactTest extends BaseClass {
 	
 	//public static void main(String[] args) throws InterruptedException, FileNotFoundException, IOException, ParseException {
 @Test
 public void runOptiTest() throws FileNotFoundException, IOException, ParseException {
-	ExtentTest test=report.createTest("runOptiTest");
+	//ExtentTest test=report.createTest("runOptiTest");
 		// ==============================
 		// Browser Setup
 		// ==============================
@@ -82,13 +84,17 @@ public void runOptiTest() throws FileNotFoundException, IOException, ParseExcept
 		String verifiedLastname = cp.getVerifyLastName().getText();
 		Assert.assertEquals(firstName,verifiedFirstname);
 		Assert.assertEquals(lastName,verifiedLastname);
-		if (firstName.equals(verifiedFirstname) && lastName.equals(verifiedLastname)) {
-			System.out.println("contact is varified");	
-			test.log(Status.PASS, "contact is varified");
-		} else {
-			System.out.println("verification is failed");
-			test.log(Status.FAIL, "contact is varified");
-		}
+		boolean status= (firstName.equals(verifiedFirstname) && lastName.equals(verifiedLastname));
+		Assert.assertTrue(status);
+		
+//		
+//		if (firstName.equals(verifiedFirstname) && lastName.equals(verifiedLastname)) {
+//			System.out.println("contact is varified");	
+//			test.log(Status.PASS, "contact is varified");
+//		} else {
+//			System.out.println("verification is failed");
+//			test.log(Status.FAIL, "contact is varified");
+////		}
 		
 		
 	

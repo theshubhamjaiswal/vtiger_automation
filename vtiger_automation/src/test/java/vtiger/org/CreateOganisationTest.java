@@ -1,19 +1,12 @@
 package vtiger.org;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import ObjectRepository.HomePage;
-import ObjectRepository.LoginPage;
 import ObjectRepository.OrganPage;
 import baseutility.BaseClass;
 
@@ -30,11 +23,11 @@ import baseutility.BaseClass;
  * Organizations Module 4. Create New Organization 5. Validate Organization
  * Creation 6. Logout from Application 7. Close Browser
  */
-
+@Listeners(listeners_utility.List_Imp.class)
 public class CreateOganisationTest extends BaseClass {
 	@Test
 	public void createOrg() throws InterruptedException {
-	ExtentTest test=report.createTest("createOrg");
+	//ExtentTest test=report.createTest("createOrg");
 		// ==============================
 		// Browser Setup
 		// ==============================
@@ -97,17 +90,21 @@ public class CreateOganisationTest extends BaseClass {
 		// ==============================
 		//String actualOrgName = driver.findElement(By.id("dtlview_Organization Name")).getText();
 		String actualOrgName=op.getVerifyOrgNameField().getText();
-		if (actualOrgName.equals(expectedOrgName)) {
-			test.log(Status.PASS, "Organization created successfully");
-			System.out.println("PASS : Organization created successfully");
-			System.out.println("Created Organization Name : " + actualOrgName);
-
-		} else {
-			test.log(Status.FAIL, "FAIL : Organization creation failed");
-			System.out.println("FAIL : Organization creation failed");
-			System.out.println("Expected : " + expectedOrgName);
-			System.out.println("Actual   : " + actualOrgName);
-		}
+		boolean status=(actualOrgName.equals(expectedOrgName));
+		Assert.assertTrue(status);
+		
+		
+//		if (actualOrgName.equals(expectedOrgName)) {
+//			test.log(Status.PASS, "Organization created successfully");
+//			System.out.println("PASS : Organization created successfully");
+//			System.out.println("Created Organization Name : " + actualOrgName);
+//
+//		} else {
+//			test.log(Status.FAIL, "FAIL : Organization creation failed");
+//			System.out.println("FAIL : Organization creation failed");
+//			System.out.println("Expected : " + expectedOrgName);
+//			System.out.println("Actual   : " + actualOrgName);
+//		}
 
 		// ==============================
 		// Logout from Application

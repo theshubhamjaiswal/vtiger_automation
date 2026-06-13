@@ -7,6 +7,8 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -18,12 +20,12 @@ import ObjectRepository.LoginPage;
 import baseutility.BaseClass;
 import generic_utility.FileUtility;
 import generic_utility.WebdriverUtility;
-
+@Listeners(listeners_utility.List_Imp.class)
 public class CreateLeadsTestOpti extends BaseClass{
 	
 		@Test
 		public void runLeadTest() throws FileNotFoundException, IOException, ParseException, InterruptedException {
-			ExtentTest test=report.createTest("runOptiTest");
+		//	ExtentTest test=report.createTest("runOptiTest");
 			//FileUtility futil= new FileUtility();
 //		String BROWSER=futil.getDataFromJsonFile("bro");
 //		String URL=futil.getDataFromJsonFile("url");
@@ -58,14 +60,20 @@ public class CreateLeadsTestOpti extends BaseClass{
 		lpp.getSavebtn().click();
 		String verifylastname=lpp.getVerifyLastName().getText();
 		String verifycompname=lpp.getVerifyCOmpany().getText();
-		if(initiallastname.equals(verifylastname) && initialComName.equals(verifycompname)) {
-			System.out.println("verified");
-			test.log(Status.PASS, "contact is varified");
-		}else {
-			System.out.println("not verified");
-			test.log(Status.FAIL, "contact is varified");
-		}
 		
+		
+		boolean status= (initiallastname.equals(verifylastname) && initialComName.equals(verifycompname));
+		Assert.assertTrue(status);
+		
+//		
+//		if(initiallastname.equals(verifylastname) && initialComName.equals(verifycompname)) {
+//			System.out.println("verified");
+//			test.log(Status.PASS, "contact is varified");
+//		}else {
+//			System.out.println("not verified");
+//			test.log(Status.FAIL, "contact is varified");
+//		}
+//		
 //		WebElement profileIcon =hp.getProfileicon();
 //		Wutil.hover(profileIcon);
 //		hp.getSignoutLink().click();

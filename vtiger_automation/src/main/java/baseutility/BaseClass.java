@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -26,24 +25,23 @@ import generic_utility.WebdriverUtility;
 public class BaseClass {
 
 	public WebDriver driver;
-	public ExtentSparkReporter spark;
-	public ExtentReports report;
-	@BeforeSuite
-	public void reportConfig() {
-		spark = new ExtentSparkReporter("./advance_report/rep1.html") ;
-		spark.config().setDocumentTitle("vtiger report");
-		spark.config().setReportName("vtiger crm");
-		spark.config().setTheme(Theme.DARK);
+	public static WebDriver sdriver;
+//	@BeforeSuite
+//	public void reportConfig() {
+//		spark = new ExtentSparkReporter("./advance_report/rep1.html") ;
+//		spark.config().setDocumentTitle("vtiger report");
+//		spark.config().setReportName("vtiger crm");
+//		spark.config().setTheme(Theme.DARK);
+//		
+//		report = new ExtentReports();
+//		report.attachReporter(spark);
+//		report.setSystemInfo("type", "web");
+//		report.setSystemInfo("tool", "tool");
+//		report.setSystemInfo("os", "window");
+//		report.setSystemInfo("os version", "window 12");
+//		
 		
-		report = new ExtentReports();
-		report.attachReporter(spark);
-		report.setSystemInfo("type", "web");
-		report.setSystemInfo("tool", "tool");
-		report.setSystemInfo("os", "window");
-		report.setSystemInfo("os version", "window 12");
-		
-		
-	}
+	//}
 	@BeforeClass
 	public void setUp() throws FileNotFoundException, IOException, ParseException {
 		FileUtility futil = new FileUtility();
@@ -54,7 +52,7 @@ public class BaseClass {
 		WebdriverUtility Wutil = new WebdriverUtility(driver);
 		Wutil.maximizeWindow();
 		Wutil.implicitWait();
-
+		sdriver=driver;
 	}
 
 	@BeforeMethod
@@ -85,8 +83,8 @@ public class BaseClass {
 		System.out.println("Browser closed successfully");
 		driver.quit();
 	}
-	@AfterSuite
-	public void reportBackup() {
-		report.flush();
-	}
+//	@AfterSuite
+//	public void reportBackup() {
+//		report.flush();
+//	}
 }
