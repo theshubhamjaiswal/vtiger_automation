@@ -25,7 +25,7 @@ public class OrgTest {
 		}
 		Thread.sleep(1000);
 		System.out.println("Org created");
-		driver.quit();
+		//driver.quit();
 	}
 	
 }

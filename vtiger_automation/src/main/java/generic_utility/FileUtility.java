@@ -19,8 +19,10 @@ public class FileUtility {
  
 	public String getDataFromJsonFile(String key) throws FileNotFoundException, IOException, ParseException {
 		JSONParser parser=new JSONParser();
-		Object obj=parser.parse(new FileReader("./src/test/resources/commondata.json"));
-		JSONObject jobj=(JSONObject) obj;
+//		Object obj=parser.parse(new FileReader("./src/test/resources/commondata.json"));
+//		JSONObject jobj=(JSONObject) obj;
+//		String value = jobj.get(key).toString();
+		JSONObject jobj=(JSONObject)parser.parse(new FileReader("./src/test/resources/commondata.json"));
 		String value = jobj.get(key).toString();
 		return value;
 	}

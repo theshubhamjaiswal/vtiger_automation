@@ -11,9 +11,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class GetDataFromExcelSheet {
-public static void main(String[] args) throws EncryptedDocumentException, IOException {
-	
-	FileInputStream fis=new FileInputStream("./src/test/resources/testscriptdataorg.xlsx");
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+
+		FileInputStream fis = new FileInputStream("./src/test/resources/testscriptdataorg.xlsx");
+
 	
 	Workbook wb=WorkbookFactory.create(fis);
 	
@@ -28,7 +29,6 @@ public static void main(String[] args) throws EncryptedDocumentException, IOExce
 	
 	wb.close();
 	fis.close();
-	
-	
-}
+
+	}
 }

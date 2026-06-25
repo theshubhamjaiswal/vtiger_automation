@@ -23,7 +23,7 @@ public class LeadTest {
 		}
 		Thread.sleep(1000);
 		System.out.println("lead created");
-		driver.quit();
+		//driver.quit();
 	}
 	
 }

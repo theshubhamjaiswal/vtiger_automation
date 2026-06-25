@@ -25,7 +25,7 @@ public class ContactTest {
 		
 		Thread.sleep(2000);
 		System.out.println("Contact created");
-		driver.quit();
+		//driver.quit();
 	}
 
 	
